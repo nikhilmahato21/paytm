@@ -1,8 +1,9 @@
 import { Router } from "express";
 import zod from "zod";
-import User from "../db.js";
+import User, { Account } from "../db.js";
 
 import jwt from "jsonwebtoken";
+import authMiddleware from "../middleware.js";
 const router = Router();
 
 const signupSchema = zod.object({
@@ -29,7 +30,12 @@ router.post("/signup", async (req, res) => {
       message: "Email already taken",
     });
   }
-  const dbUser = await User.create(body);
+  const newUser = await User.create(body);
+  const userId = newUser._id;
+  await Account.create({
+    userId,
+    balance: 1 + Math.random() * 10000,
+  });
 
   res.json({
     message: "user created successully!",

@@ -1,10 +1,10 @@
 import jwt from "jsonwebtoken";
 
-const authMiddleware = (res, req, next) => {
+const authMiddleware = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return res.status(403).json({});
+    return res.status(403).json({ error: "Forbidden: No or invalid authorization header" });
   }
 
   const token = authHeader.split(" ")[1];
@@ -15,10 +15,10 @@ const authMiddleware = (res, req, next) => {
       req.userId = decoded.userId;
       next();
     } else {
-      return res.status(403).json({});
+      return res.status(403).json({ error: "Forbidden: Invalid token payload" });
     }
   } catch (error) {
-    return res.status(403).json({});
+    return res.status(403).json({ error: "Forbidden: Token verification failed" });
   }
 };
 
