@@ -12,11 +12,14 @@ export const Users = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get("https://parallelpay.onrender.com/api/v1/user/bulk?filter=" + filter, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      .get(
+        "https://parallelpay.onrender.com/api/v1/user/bulk?filter=" + filter,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((response) => {
         setUsers(response.data.user);
       });
@@ -32,7 +35,7 @@ export const Users = () => {
           }}
           type="text"
           placeholder="Search users..."
-          className="w-96 px-2 py-2 border-2 border-gray-500 rounded-xl "
+          className=" w-52 md:w-96 px-2 py-2 border-2 border-gray-500 rounded-xl "
         ></input>
       </div>
       <div>
@@ -70,7 +73,10 @@ function User({ user }) {
           className="flex justify-center items-center gap-1 border-2 border-gray-800 rounded-lg p-2"
           type="button"
         >
-          send money <span><img src={comet2} alt="" className="h-5" /></span>
+          send money{" "}
+          <span>
+            <img src={comet2} alt="" className="h-5" />
+          </span>
         </button>
       </div>
     </div>
