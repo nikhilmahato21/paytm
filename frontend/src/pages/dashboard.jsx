@@ -30,7 +30,7 @@ const Dashboard = () => {
 
         // Make the request with the Bearer token
         const response = await axios.get(
-          "http://localhost:3000/api/v1/user/current-user",
+          "https://parallelpay.onrender.com/api/v1/user/current-user",
           {
             headers: {
               Authorization: `Bearer ${token}`,

@@ -18,7 +18,7 @@ export const Balance = ({ value }) => {
 
     try {
       await axios.post(
-        "http://localhost:3000/api/v1/account/add-money",
+        "https://parallelpay.onrender.com/api/v1/account/add-money",
         { amount },
         {
           headers: {
@@ -27,7 +27,6 @@ export const Balance = ({ value }) => {
         }
       );
 
-      toast.success("Money added successfully!");
       document.getElementById("my_modal_1").showModal();
       navigate("/dashboard");
       closeModal();
@@ -121,13 +120,18 @@ export const Balance = ({ value }) => {
             <img src={kbc} alt="" className="rounded-lg h-40 md:h-60 " />
             <span className="text-green-700 text-lg bg-green-100 p-2 rounded-lg text-center">
               ₹ {amount} added successfully!🤑
-              <br /> <span className="text-sm">Now, feel free to splurge on those virtual goods.</span> 
+              <br />{" "}
+              <span className="text-sm">
+                Now, feel free to splurge on those virtual goods.
+              </span>
             </span>
           </div>
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
-              <button className="bg-green-50 text-green-700 p-2 px-3 border-2 border-green-200 rounded-lg">Close</button>
+              <button className="bg-green-50 text-green-700 p-2 px-3 border-2 border-green-200 rounded-lg">
+                Close
+              </button>
             </form>
           </div>
         </div>

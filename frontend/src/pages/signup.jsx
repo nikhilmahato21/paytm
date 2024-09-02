@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 export const loader = async () => {
   try {
     const token = localStorage.getItem("token");
-    await axios.get("http://localhost:3000/api/v1/user/current-user", {
+    await axios.get("https://parallelpay.onrender.com/api/v1/user/current-user", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -28,7 +28,7 @@ export const action = async ({ request }) => {
   const data = Object.fromEntries(formData);
 
   try {
-    await axios.post("http://localhost:3000/api/v1/user/signup", data);
+    await axios.post("https://parallelpay.onrender.com/api/v1/user/signup", data);
     toast.success("Register successful");
     return redirect("/signin");
   } catch (error) {

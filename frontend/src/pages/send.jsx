@@ -13,7 +13,7 @@ export const action = async ({ request }) => {
 
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/v1/account/transfer",
+      "https://parallelpay.onrender.com/api/v1/account/transfer",
       {
         to: id,
         amount: data.amount,

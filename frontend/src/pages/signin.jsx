@@ -10,7 +10,7 @@ import axios from "axios";
 export const loader = async () => {
   try {
     const token = localStorage.getItem("token");
-    await axios.get("http://localhost:3000/api/v1/user/current-user", {
+    await axios.get("https://parallelpay.onrender.com/api/v1/user/current-user", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -29,7 +29,7 @@ export const action = async ({ request }) => {
 
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/v1/user/signin",
+      "https://parallelpay.onrender.com/api/v1/user/signin",
       data
     );
     localStorage.setItem("token", response.data.token);
