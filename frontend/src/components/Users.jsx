@@ -51,26 +51,26 @@ function User({ user }) {
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-between py-1.5">
-      <div className="flex  justify-center items-center">
+    <div className="flex  justify-between py-1.5">
+      <div className="flex w-1/2    items-center">
         <div className="rounded-full h-10 w-10 border-2 border-gray-700 text-slate-600 font-bold flex justify-center mt-1 mr-2">
           <div className="flex flex-col justify-center  h-full text-xl">
             {user.firstName[0]}
           </div>
         </div>
-        <div className="flex flex-col justify-center h-ful">
+        <div className="flex flex-col justify-center h-full">
           <div>
             {user.firstName} {user.lastName}
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col justify-center h-full">
+      <div className="flex   flex-col justify-center h-full">
         <button
           onClick={(e) => {
             navigate("/send?id=" + user._id + "&name=" + user.firstName);
           }}
-          className="flex justify-center items-center gap-1 border-2 border-gray-800 rounded-lg p-2"
+          className="flex  justify-center items-center gap-1 border-2 border-gray-800 rounded-lg p-2"
           type="button"
         >
           send money{" "}
