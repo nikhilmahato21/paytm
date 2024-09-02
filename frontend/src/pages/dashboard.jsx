@@ -68,10 +68,24 @@ const Dashboard = () => {
       </div>
       {transferSuccess && (
         <div>
-          mmmmmmmmmmmmmmmmmmm
-          <Modal navigate="/dashboard" isOpen={isModalOpen} onClose={closeModal}>
-            <h2 className="text-black">Money Sent Successfully!</h2>
-            <p>Transfer of ₹ 100 to nik was successful.</p>
+          <Modal
+            navigate="/dashboard"
+            isOpen={isModalOpen}
+            onClose={closeModal}
+          >
+            <div
+              className="flex flex-col gap-2 items-center p-4 mb-4 text-sm  rounded-lg"
+              role="alert"
+            >
+              <img src="https://res.cloudinary.com/dynbpb9u0/image/upload/v1725129571/ezgif-7-ab25e61532_mxxrgy.gif" alt="" className="rounded-lg h-40 md:h-60 " />
+              <span className="text-green-700 text-lg bg-green-100 p-2 rounded-lg text-center">
+                Money sent successfully!
+                <br />{" "}
+                <span className="text-sm">
+                Hopefully, they won’t spend it all in one place... or at all.😏
+                </span>
+              </span>
+            </div>
           </Modal>
           {/* rest of the component */}
         </div>
