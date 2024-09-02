@@ -9,10 +9,10 @@ const Home = () => {
         alt="Top Image"
         className="w-full max-w-lg h-52 object-cover object-center mb-6 rounded-lg"
       />
-      <h1 className="text-5xl font-bold text-center text-moneyBlack mb-4">
+      <h1 className="text-3xl md:text-5xl font-bold text-center text-moneyBlack mb-4">
         "We Get It, You're Broke!"😜
       </h1>
-      <p className=" flex mb-6 text-center font-bold  font-mono text-slate-600 text-2xl max-w-lg">
+      <p className=" flex mb-6 text-center font-bold  font-mono text-slate-600 text-xl md:text-2xl max-w-lg">
         Send some to your friends—they’re probably just as broke. Time to learn
         how to spread the wealth, even if it's fake! 💸
       </p>
