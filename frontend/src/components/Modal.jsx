@@ -8,11 +8,11 @@ const Modal = ({ isOpen, onClose, children, navigate }) => {
 
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
-      <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
+      <div className="bg-white mx-2 p-6 rounded-lg shadow-lg max-w-lg w-full">
         <div className="flex justify-between items-center mb-2">
           <button
             onClick={() => {
-              onClose;
+              onClose();
               navigateTo(navigate);
             }}
             className="text-gray-600 hover:text-gray-900"
